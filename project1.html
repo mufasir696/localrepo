@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Click mE</button>
+    <script>
+        let btn=document.getElementById("btn")
+        // let gradients=[
+        //   "linear-gradient(yellow, green)",
+        //     "linear-gradient(yellow, red, blue)",
+        //     "linear-gradient(black, white)",
+        //     "linear-gradient(white, green)",
+        //     "linear-gradient(yellow, white)"
+        // ]
+        function changecolor(){
+           let letter=["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
+           let color="#"
+            for(let i=0;i<6;i++){
+                color+=letter[Math.floor(Math.random()*16)]
+            }
+            return color;
+        }
+        btn.addEventListener("click",function(){
+            let color1=changecolor()
+            let color2=changecolor()
+            document.body.style.background=`linear-gradient(to right,${color1},${color2})`
+
+        });
+    </script>
+</body>
+</html>

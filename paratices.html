@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Only Button Click Example</title>
+</head>
+<body style="background: gray; color: green;">
+
+  <h1>Hello World</h1>
+
+  <input id="name" type="text" placeholder="Enter your name">
+  <button id="btn">Click Me</button>
+
+  <p id="display"></p> <!-- Sirf button click ke baad yahan naam show hoga -->
+
+  <!-- Script body ke end me rakho -->
+  <script>
+    let btn = document.getElementById("btn");
+    let input = document.getElementById("name");
+    let display = document.getElementById("display");
+
+    btn.addEventListener("click", function(){
+        display.innerText = input.value;  // Sirf button click pe show hoga
+    });
+  </script>
+</body>
+</html>

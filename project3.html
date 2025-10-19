@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: black;
+            color: cyan;
+            font-family: Arial, sans-serif;
+        }
+        #clock {
+            font-size: 60px;
+            font-weight: bold;
+        }
+        #date {
+            font-size: 25px;
+            margin-top: 10px;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="clock">00:00:00</div>
+    <div id="date">Loading...</div>
+
+    <script>
+        function updateClock() {
+            let now = new Date();
+
+            // Time
+            let hour = now.getHours();
+            let min = String(now.getMinutes()).padStart(2, '0');
+            let seconds = String(now.getSeconds()).padStart(2, '0');
+            let ampm = hour >= 12 ? "PM" : "AM"; 
+
+            // 24h → 12h conversion
+            hour = hour % 12;
+            hour = hour ? hour : 12; // 0 ko 12 bana do
+            hour = String(hour).padStart(2, '0');
+
+            document.getElementById("clock").innerText = `${hour}:${min}:${seconds} ${ampm}`;
+
+            // Date + Day
+            let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+            let day = days[now.getDay()];
+            let date = now.getDate();
+            let month = now.getMonth()+1; 
+            let year = now.getFullYear();
+            document.getElementById("date").innerText = `${day}, ${date}-${month}-${year}`;
+        }
+
+        updateClock(); 
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>

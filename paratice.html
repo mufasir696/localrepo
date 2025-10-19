@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: gray;
+        color:green
+    }
+    #btn{
+        color: white;
+        background:blue;
+    }
+</style>
+<body>
+    <h1>Hello world</h1>
+    <button id="btn">Click Me</button>
+    <input id="name" type="name" placeholder="Enter your name">
+    <p id="display"></p>
+    <p id="selector">hello world</p>
+    <script>
+   let button=document.getElementById("btn")
+   button.addEventListener("click",function(){
+    console.log("Mufasir")
+    alert("show")
+   })
+    alert('hello')
+  let input = document.getElementById("name");
+
+  input.addEventListener("input", function() {
+    console.log("User likh raha hai: " + input.value);
+  });
+  let buttons=document.getElementById("btn")
+  buttons.addEventListener("click",function(){
+    let input=document.getElementById("name").value
+    let display=document.getElementById("display")
+    display.innerText="name"+input
+  });
+  let sel=document.querySelector("#selector")
+  sel.color="red"
+</script>
+
+</script>
+</body>
+</html>
