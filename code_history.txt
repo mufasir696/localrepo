@@ -1,0 +1,14 @@
+Language: java
+Code:
+# Task template not found
+Errors:
+
+---
+
+Language: java
+Code:
+System.out.print("Hello World");
+Errors:
+
+---
+
